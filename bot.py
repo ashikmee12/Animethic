@@ -804,7 +804,8 @@ async def rank_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
             text += f"• {ach}\n"
     
     await update.message.reply_text(text, parse_mode='Markdown')
-  async def panel_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+
+async def panel_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """অ্যাডমিন প্যানেল"""
     user_id = update.effective_user.id
     
