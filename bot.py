@@ -880,7 +880,7 @@ async def api_status_command(update: Update, context: ContextTypes.DEFAULT_TYPE)
         text += "❌ Blog ID: Not configured"
     
     await update.message.reply_text(text, parse_mode='Markdown')
-  async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """মেসেজ হ্যান্ডলার"""
     if not update.message or not update.message.text:
         return
