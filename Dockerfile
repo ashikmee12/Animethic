@@ -2,9 +2,10 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# System dependencies
+# System dependencies - procps যোগ করা হয়েছে pkill এর জন্য
 RUN apt-get update && apt-get install -y \
     gcc \
+    procps \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements first for better caching
