@@ -192,7 +192,6 @@ async def search_command(u: Update, c: ContextTypes.DEFAULT_TYPE):
         await u.message.reply_text("❌ Search command is currently disabled.")
         return
     if not c.args:
-        await u.message.reply_text("Usage: /search [anime name]\nExample: /search Naruto Season 9")
         return
     query = ' '.join(c.args)
     await do_search(u.message, query)
