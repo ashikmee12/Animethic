@@ -13,6 +13,7 @@ import threading
 import asyncio
 import time
 from datetime import datetime, timedelta
+from datetime import time as dt_time
 from difflib import SequenceMatcher
 from flask import Flask
 import requests
@@ -933,7 +934,7 @@ def main():
     
     # জব কিউ
     app.job_queue.run_repeating(auto_poster, interval=settings_db["poster"]["interval"], first=10)
-    app.job_queue.run_daily(daily_reset, time=datetime.time(hour=0, minute=0, second=0))
+    app.job_queue.run_daily(daily_reset, time=dt_time(hour=0, minute=0, second=0))
     
     logger.info("🤖 বট চালু হয়েছে!")
     app.run_polling()
